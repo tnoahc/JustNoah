@@ -1,0 +1,17 @@
+---
+services:
+    netbird:
+        container_name: netbird
+        cap_add:
+            - NET_ADMIN
+        environment:
+            - NB_SETUP_KEY= # Generate a setup key at https://app.netbird.io
+            - NB_HOSTNAME=MyHomeLab
+        volumes:
+            - netbird-client:/etc/netbird
+        image: netbirdio/netbird:latest
+        restart: unless-stopped
+volumes:
+    netbird-client:
+        external: true
+        name: netbird-client

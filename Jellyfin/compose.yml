@@ -5,7 +5,7 @@ services:
     container_name: jellyfin
     environment:
       - TZ=Africa/Kampala # Set your timezone
-      - JELLYFIN_PublishedServerUrl=https://your-address.example.com #optional
+      #- JELLYFIN_PublishedServerUrl=https://your-address.example.com #optional
     volumes:
       - ./config:/config
       - ./cache:/cache
